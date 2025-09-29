@@ -236,7 +236,7 @@ function fillSample() {
     "*024*": "225.000.000",
     "*025*": "50.000.000",
     "*026*": "175.000.000",
-    "*027*": "Banjarbaru, 17 April 2025"
+    "*027*": "17 April 2025"
   };
 
   for (const key in sample) {
@@ -251,5 +251,6 @@ function clearForm() {
   document.querySelectorAll("#contractForm input").forEach(i => (i.value = ""));
   updatePreview();
 }
+
 
 
