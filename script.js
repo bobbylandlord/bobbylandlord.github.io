@@ -218,10 +218,10 @@ function fillSample() {
     "*006*": "Direktur",
     "*007*": "PT. BERKAH JAYA BERSAUDARA",
     "*008*": "6372000000000001",
-    "*009*": "RICHARD RICHARD",
+    "*009*": "SI BOLANG",
     "*010*": "BUMI, 00-00-1900",
     "*011*": "JL. PETUALANG NO. 00 RT.000 RW.000\nKEL.LOKTABAT KEC.LOKTABAT",
-    "*012*": "SI BOLANG",
+    "*012*": "PETUALANG",
     "*013*": "08123456789",
     "*014*": "6 (enam)",
     "*015*": "BERKAH JAYA BERSAUDARA KAVLING LAND 38",
@@ -251,6 +251,7 @@ function clearForm() {
   document.querySelectorAll("#contractForm input").forEach(i => (i.value = ""));
   updatePreview();
 }
+
 
 
 
