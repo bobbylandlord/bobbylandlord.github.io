@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Microsite Kontrak Jual Beli Tanah Kavling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontrak Jual Beli Tanah Kavling</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- pdfmake -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <!-- pdfmake / html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <header>
@@ -16,19 +16,20 @@
   </header>
 
   <main>
-    <section class="form-container">
+    <!-- Form Input -->
+    <div class="form-container">
       <h2>Form Input</h2>
       <form id="contractForm"></form>
       <button id="generateBtn">Generate PDF</button>
-    </section>
+    </div>
 
-    <section class="preview-container">
-  <h2>Preview Dokumen</h2>
-  <div id="preview" class="doc-preview"></div>
-</section>
+    <!-- Preview Dokumen -->
+    <div class="preview-container">
+      <h2>Preview Dokumen</h2>
+      <div id="preview" class="doc-preview"></div>
+    </div>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
