@@ -188,19 +188,6 @@ function generatePDF() {
 
   const preview = document.getElementById("preview");
   // html2pdf expects an element; we pass preview (which contains doc pages)
-  const opt = {
-    margin:       [10,10,10,10],
-    filename:     'Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 2, useCORS: true },
-    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  };
-
-  // disable the button while generating
-  const btn = document.getElementById("generateBtn");
-  btn.disabled = true;
-  btn.textContent = "Membuat PDF...";
-
 const opt = {
   margin:       [0,0,0,0],   // biar margin dari CSS
   filename:     'Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf',
@@ -208,6 +195,11 @@ const opt = {
   html2canvas:  { scale: 2, useCORS: true },
   jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
 };
+
+  // disable the button while generating
+  const btn = document.getElementById("generateBtn");
+  btn.disabled = true;
+  btn.textContent = "Membuat PDF...";
 
   
   // create pdf
