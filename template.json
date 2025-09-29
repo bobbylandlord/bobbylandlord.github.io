@@ -2,9 +2,6 @@
   "page1": [
     { "title": "SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING" },
     { "subtitle": "No. : *001*" },
-
-
-
     
     { "text": "Yang bertandatangan di bawah ini :" },
 
@@ -52,23 +49,13 @@
 
   "page3": [
     { "text": "Demikian surat Pembelian ini dibuat oleh kedua belah pihak tanpa ada sesuatu paksaan, penekanan dari pihak manapun dan setelah dibaca serta dipahami maksud isinya, disepakati oleh kedua belah pihak, kemudian ditanda tangani di atas materai oleh kedua belah pihak dalam rangkap 2 (dua) yang bermaterai cukup, Rangkap Pertama untuk PIHAK PENJUAL dan Rangkap Kedua untuk PIHAK PEMBELI, yang keduanya mempunyai kekuatan hukum yang sama." },
-
-
-    
-    
+    { "margin-bottom": { "value": 10, "unit": "px" } },
     { "text": "Catatan / Keterangan Khusus ………………………………………………………………………. " },
-
-    
-    
+    { "margin-bottom": { "value": 10, "unit": "px" } },
     { "text": "Banjarbaru, *027*", "align": "right" },
-
-
-    
+    { "margin-bottom": { "value": 10, "unit": "px" } },
     { "text": "SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING INI DISETUJUI OLEH:" },
-
-
-    
-    
+    { "margin-bottom": { "value": 10, "unit": "px" } },
     {
       "columns": [
         { "text": "PEMBELI\n\n\n\n(*009*)" },
@@ -77,6 +64,7 @@
     }
   ]
 }
+
 
 
 
