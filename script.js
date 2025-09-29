@@ -87,21 +87,63 @@ function replacePlaceholders(textObj, inputs) {
   return textObj;
 }
 
-// Update preview JSON
 function updatePreview() {
   const inputs = [...document.querySelectorAll("input")].map(inp => ({
     code: inp.dataset.code,
     value: inp.value
   }));
 
-  const merged = {
-    page1: replacePlaceholders(templateData.page1, inputs),
-    page2: replacePlaceholders(templateData.page2, inputs),
-    page3: replacePlaceholders(templateData.page3, inputs)
-  };
+  const page1 = replacePlaceholders(templateData.page1, inputs);
+  const page2 = replacePlaceholders(templateData.page2, inputs);
+  const page3 = replacePlaceholders(templateData.page3, inputs);
 
-  document.getElementById("preview").textContent = JSON.stringify(merged, null, 2);
+  const preview = document.getElementById("preview");
+  preview.innerHTML = `
+    <div class="doc-page">
+      <div class="doc-title">SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING</div>
+      <div class="doc-subtitle">No. : ${inputs.find(i => i.code === "*001*").value}</div>
+      <div class="doc-section">${renderContent(page1)}</div>
+    </div>
+
+    <div class="doc-page">
+      <div class="doc-section">${renderContent(page2)}</div>
+    </div>
+
+    <div class="doc-page">
+      <div class="doc-section">${renderContent(page3)}</div>
+    </div>
+  `;
 }
+
+// Render konten (string/array/objek) jadi HTML
+function renderContent(content) {
+  if (typeof content === "string") {
+    return `<p>${content}</p>`;
+  }
+  if (Array.isArray(content)) {
+    return content.map(item => renderContent(item)).join("");
+  }
+  if (typeof content === "object" && content !== null) {
+    if (content.table) {
+      return renderTable(content.table);
+    }
+    if (content.ol) {
+      return `<ol class="doc-ol">${content.ol.map(li => `<li>${li}</li>`).join("")}</ol>`;
+    }
+    if (content.text) {
+      return `<p>${content.text}</p>`;
+    }
+  }
+  return "";
+}
+
+function renderTable(table) {
+  let rows = table.body.map(
+    row => `<tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>`
+  ).join("");
+  return `<table class="doc-table">${rows}</table>`;
+}
+
 
 // Generate PDF
 document.getElementById("generateBtn").addEventListener("click", () => {
@@ -141,3 +183,4 @@ document.getElementById("generateBtn").addEventListener("click", () => {
 
   pdfMake.createPdf(docDefinition).download("Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf");
 });
+
