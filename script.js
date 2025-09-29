@@ -1,6 +1,6 @@
 let templateData = null;
 
-// Mapping placeholder ke label deskriptif
+// Mapping placeholder ke label input
 const labelsMap = {
   "*001*": "Nomor Surat Perjanjian",
   "*002*": "NIK Penjual",
@@ -48,7 +48,7 @@ function buildForm() {
     wrapper.classList.add("form-group");
 
     const label = document.createElement("label");
-    label.textContent = labelsMap[code] || code; // tampilkan label deskriptif
+    label.textContent = labelsMap[code] || code;
 
     const input = document.createElement("input");
     input.type = "text";
@@ -71,114 +71,54 @@ function replacePlaceholders(textObj, inputs) {
     });
     return result;
   }
-
   if (Array.isArray(textObj)) {
     return textObj.map(item => replacePlaceholders(item, inputs));
   }
-
-  if (typeof textObj === "object" && textObj !== null) {
-    const newObj = {};
-    for (const key in textObj) {
-      newObj[key] = replacePlaceholders(textObj[key], inputs);
-    }
-    return newObj;
-  }
-
   return textObj;
 }
 
+// Update Preview
 function updatePreview() {
   const inputs = [...document.querySelectorAll("input")].map(inp => ({
     code: inp.dataset.code,
     value: inp.value
   }));
 
-  const page1 = replacePlaceholders(templateData.page1, inputs);
-  const page2 = replacePlaceholders(templateData.page2, inputs);
-  const page3 = replacePlaceholders(templateData.page3, inputs);
+  const page1 = replacePlaceholders(templateData.page1, inputs).join("");
+  const page2 = replacePlaceholders(templateData.page2, inputs).join("");
+  const page3 = replacePlaceholders(templateData.page3, inputs).join("");
 
   const preview = document.getElementById("preview");
   preview.innerHTML = `
-    <div class="doc-page">
-      <div class="doc-title">SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING</div>
-      <div class="doc-subtitle">No. : ${inputs.find(i => i.code === "*001*").value}</div>
-      ${renderContent(page1)}
-    </div>
-
-    <div class="doc-page">
-      ${renderContent(page2)}
-    </div>
-
-    <div class="doc-page">
-      ${renderContent(page3)}
+    <div class="doc-preview">
+      <div class="doc-page">${page1}</div>
+      <div class="doc-page">${page2}</div>
+      <div class="doc-page">${page3}</div>
     </div>
   `;
 }
 
-// Render konten (string/array/object) ke HTML
-function renderContent(content) {
-  if (typeof content === "string") {
-    return content; // langsung render HTML
-  }
-  if (Array.isArray(content)) {
-    return content.map(item => renderContent(item)).join("\n");
-  }
-  if (typeof content === "object" && content !== null) {
-    if (content.ol) {
-      return `<div class="doc-ol">${content.ol.map((li, i) =>
-        `<div>${i + 1}. ${li}</div>`
-      ).join("")}</div>`;
-    }
-  }
-  return "";
-}
-
-
-function renderDocTable(table) {
-  return table.body.map(row =>
-    row.map(cell => `<div class="line">${cell}</div>`).join("")
-  ).join("");
-}
-
-// Generate PDF
+// Generate PDF (sementara masih basic)
 document.getElementById("generateBtn").addEventListener("click", () => {
   const inputs = [...document.querySelectorAll("input")].map(inp => ({
     code: inp.dataset.code,
     value: inp.value
   }));
 
-  const page1 = replacePlaceholders(templateData.page1, inputs);
-  const page2 = replacePlaceholders(templateData.page2, inputs);
-  const page3 = replacePlaceholders(templateData.page3, inputs);
+  const page1 = replacePlaceholders(templateData.page1, inputs).join("");
+  const page2 = replacePlaceholders(templateData.page2, inputs).join("");
+  const page3 = replacePlaceholders(templateData.page3, inputs).join("");
 
-  const docDefinition = {
-    pageSize: "A4",
-    pageMargins: [50, 50, 50, 50],
-    content: [
-      ...page1,
-      { text: "", pageBreak: "after" },
-      ...page2,
-      { text: "", pageBreak: "after" },
-      ...page3
-    ],
-    styles: {
-      title: {
-        fontSize: 14,
-        bold: true,
-        alignment: "center",
-        margin: [0, 0, 0, 10]
-      }
-    },
-    defaultStyle: {
-      font: "Helvetica",
-      fontSize: 11,
-      lineHeight: 1.2
-    }
+  const docContent = page1 + "<div style='page-break-after:always'></div>" +
+                     page2 + "<div style='page-break-after:always'></div>" +
+                     page3;
+
+  const opt = {
+    margin:       20,
+    filename:     "Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf",
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: "pt", format: "a4", orientation: "portrait" }
   };
 
-  pdfMake.createPdf(docDefinition).download("Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf");
+  html2pdf().from(docContent).set(opt).save();
 });
-
-
-
-
