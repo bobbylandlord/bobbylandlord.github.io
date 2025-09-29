@@ -42,7 +42,7 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;");
 }
 
-// Load template.json (harus ada di root)
+// Load template.json
 fetch("template.json")
   .then(res => {
     if (!res.ok) throw new Error("Gagal load template.json: " + res.status);
@@ -51,14 +51,15 @@ fetch("template.json")
   .then(data => {
     templateData = data;
     buildForm();
-    updatePreview(); // render awal (kosong)
+    updatePreview();
   })
   .catch(err => {
     console.error(err);
-    document.getElementById("preview").innerText = "Error: tidak dapat memuat template.json — cek console.";
+    document.getElementById("preview").innerText =
+      "Error: tidak dapat memuat template.json — cek console.";
   });
 
-// build 27 inputs berdasarkan labelsMap
+// build 27 inputs
 function buildForm() {
   const form = document.getElementById("contractForm");
   form.innerHTML = "";
@@ -83,19 +84,17 @@ function buildForm() {
     form.appendChild(wrapper);
   }
 
-  // tombol sample / clear
+  // tombol aksi
   document.getElementById("fillSample").addEventListener("click", fillSample);
   document.getElementById("clearSample").addEventListener("click", clearForm);
-  // generate
   document.getElementById("generateBtn").addEventListener("click", generatePDF);
 }
 
-// apabila textObj (string/object/array) -> ganti placeholder *00x* dengan nilai input
+// replace placeholder *00x*
 function replacePlaceholders(textObj, inputs) {
   if (typeof textObj === "string") {
     let result = textObj;
     inputs.forEach(input => {
-      // ganti semua kemunculan
       result = result.split(input.code).join(input.value || "");
     });
     return result;
@@ -116,14 +115,13 @@ function replacePlaceholders(textObj, inputs) {
   return textObj;
 }
 
-// render a single content item (object/string) ke HTML
+// render 1 item
 function renderItem(item) {
   if (typeof item === "string") {
     return `<div class="doc-text">${escapeHtml(item)}</div>`;
   }
   if (item === null || item === undefined) return "";
 
-  // handle typed objects
   if (item.title) {
     return `<div class="doc-title">${escapeHtml(item.title)}</div>`;
   }
@@ -131,13 +129,14 @@ function renderItem(item) {
     return `<div class="doc-subtitle">${escapeHtml(item.subtitle)}</div>`;
   }
   if (item.text) {
-    if (item.italics) {
-      return `<div class="doc-text italics">${escapeHtml(item.text)}</div>`;
-    }
-    return `<div class="doc-text">${escapeHtml(item.text)}</div>`;
+    let cls = "doc-text";
+    if (item.italics) cls += " italics";
+    let style = "";
+    if (item.alignment === "right") style = "text-align:right;";
+    if (item.alignment === "center") style = "text-align:center;";
+    return `<div class="${cls}" style="${style}">${escapeHtml(item.text)}</div>`;
   }
   if (item.line) {
-    // label & value — memastikan ":" sejajar lewat CSS
     const lab = escapeHtml(item.line.label || "");
     const val = escapeHtml(item.line.value || "");
     return `<div class="line"><div class="label">${lab}</div><div class="value">: ${val}</div></div>`;
@@ -147,15 +146,20 @@ function renderItem(item) {
     return `<ol class="doc-ol">${lis}</ol>`;
   }
   if (item.columns) {
-    const cols = item.columns.map(col => `<div class="col">${escapeHtml(col.text || "")}</div>`).join("");
+    const cols = item.columns
+      .map(col => {
+        let style = "";
+        if (col.alignment === "center") style = "text-align:center;";
+        return `<div class="col" style="${style}">${escapeHtml(col.text || "")}</div>`;
+      })
+      .join("");
     return `<div class="columns">${cols}</div>`;
   }
 
-  // fallback — render JSON string
   return `<div class="doc-text">${escapeHtml(JSON.stringify(item))}</div>`;
 }
 
-// update preview (ambil templateData, replace placeholder, render HTML)
+// update preview
 function updatePreview() {
   if (!templateData) return;
   const inputs = [...document.querySelectorAll("#contractForm input")].map(inp => ({
@@ -163,55 +167,47 @@ function updatePreview() {
     value: inp.value ? String(inp.value) : ""
   }));
 
-  // replace placeholders (menghasilkan struktur baru)
   const p1 = replacePlaceholders(templateData.page1 || [], inputs);
   const p2 = replacePlaceholders(templateData.page2 || [], inputs);
   const p3 = replacePlaceholders(templateData.page3 || [], inputs);
 
-  // convert to HTML
-  const pageToHtml = arr => {
-    return arr.map(item => renderItem(item)).join("");
-  };
+  const pageToHtml = arr => arr.map(item => renderItem(item)).join("");
 
-  const previewEl = document.getElementById("preview");
-  previewEl.innerHTML = `
+  document.getElementById("preview").innerHTML = `
     <div class="doc-page">${pageToHtml(p1)}</div>
     <div class="doc-page">${pageToHtml(p2)}</div>
     <div class="doc-page">${pageToHtml(p3)}</div>
   `;
 }
 
-// Generate PDF dari elemen .doc-preview
+// generate PDF
 function generatePDF() {
-  // pastikan preview up-to-date
   updatePreview();
-
   const preview = document.getElementById("preview");
-  // html2pdf expects an element; we pass preview (which contains doc pages)
-const opt = {
-  margin:       [0,0,0,0],   // biar margin dari CSS
-  filename:     'Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf',
-  image:        { type: 'jpeg', quality: 0.98 },
-  html2canvas:  { scale: 2, useCORS: true },
-  jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-};
 
-  // disable the button while generating
+  const opt = {
+    margin: [0, 0, 0, 0], // biar CSS atur margin
+    filename: "Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+  };
+
   const btn = document.getElementById("generateBtn");
   btn.disabled = true;
   btn.textContent = "Membuat PDF...";
 
-  
-  // create pdf
-  html2pdf().set(opt).from(preview).toPdf().get('pdf').then(function(pdf) {
-    // success (no-op)
-  }).save().finally(() => {
-    btn.disabled = false;
-    btn.textContent = "Generate PDF";
-  });
+  html2pdf()
+    .set(opt)
+    .from(preview)
+    .save()
+    .finally(() => {
+      btn.disabled = false;
+      btn.textContent = "Generate PDF";
+    });
 }
 
-// helper: isi contoh data (demo)
+// isi contoh
 function fillSample() {
   const sample = {
     "*001*": "00209/TK/PT. BJB/17-04-2025",
@@ -250,8 +246,8 @@ function fillSample() {
   updatePreview();
 }
 
-// clear all inputs
+// clear form
 function clearForm() {
-  document.querySelectorAll("#contractForm input").forEach(i => i.value = "");
+  document.querySelectorAll("#contractForm input").forEach(i => (i.value = ""));
   updatePreview();
 }
