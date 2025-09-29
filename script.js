@@ -118,27 +118,21 @@ function updatePreview() {
 // Render konten (string/array/object) ke HTML
 function renderContent(content) {
   if (typeof content === "string") {
-    // biar teks panjang tetap mengikuti baris seperti dokumen
-    return `<div class="line">${content}</div>`;
+    return content; // langsung render HTML
   }
   if (Array.isArray(content)) {
     return content.map(item => renderContent(item)).join("\n");
   }
   if (typeof content === "object" && content !== null) {
-    if (content.table) {
-      return renderDocTable(content.table);
-    }
     if (content.ol) {
-      return `<div class="ol">${content.ol.map((li, i) => 
+      return `<div class="doc-ol">${content.ol.map((li, i) =>
         `<div>${i + 1}. ${li}</div>`
       ).join("")}</div>`;
-    }
-    if (content.text) {
-      return `<div class="line">${content.text}</div>`;
     }
   }
   return "";
 }
+
 
 function renderDocTable(table) {
   return table.body.map(row =>
@@ -184,6 +178,7 @@ document.getElementById("generateBtn").addEventListener("click", () => {
 
   pdfMake.createPdf(docDefinition).download("Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf");
 });
+
 
 
 
