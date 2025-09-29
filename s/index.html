@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontrak Jual Beli Tanah Kavling</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- html2pdf (mengambil HTML preview -> PDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Microsite - Kontrak Jual Beli Tanah Kavling</h1>
+    <p>Isi data (001–027). Preview akan muncul di kanan. Klik "Generate PDF" untuk unduh A4.</p>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Form Input</h2>
+      <form id="contractForm"></form>
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <button id="fillSample" type="button">Isi Contoh</button>
+        <button id="clearSample" type="button">Bersihkan</button>
+        <button id="generateBtn" type="button">Generate PDF</button>
+      </div>
+      <p style="font-size:12px; color:#666; margin-top:10px;">Catatan: setiap perubahan otomatis merender preview.</p>
+    </section>
+
+    <section class="preview-container">
+      <h2>Preview Dokumen</h2>
+      <div id="previewWrapper">
+        <!-- preview akan di-render di sini -->
+        <div id="preview" class="doc-preview"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
