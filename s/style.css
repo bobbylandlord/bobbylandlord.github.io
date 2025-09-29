@@ -1,0 +1,167 @@
+body {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin: 0;
+  background: #f4f4f9;
+  color: #222;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #002244;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.form-container, .preview-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 300px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media(min-width: 768px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 18px;
+  font-size: 14px;
+  background: #0055aa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #003f7d;
+}
+
+/* Preview Dokumen */
+#preview {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fafafa;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+/* Mode normal (responsif) */
+.doc-preview {
+  max-width: 100%;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: auto;
+  white-space: normal;
+  background: white;
+  box-sizing: border-box;
+}
+
+/* Mode PDF (fix A4) */
+.pdf-mode {
+  width: 210mm !important;
+  min-height: 297mm !important;
+  padding: 40mm 25mm 30mm 20mm !important; /* atas, kanan, bawah, kiri */
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+  margin: 0 auto;
+  background: white;
+  box-sizing: border-box;
+}
+
+/* Struktur halaman */
+.doc-page {
+  page-break-after: always;
+  margin-bottom: 40px;
+}
+
+.doc-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.doc-subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.doc-text {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.italics {
+  font-style: italic;
+}
+
+/* Format baris rapi (label : value) */
+.line {
+  display: flex;
+  margin-bottom: 4px;
+}
+.line .label {
+  flex: 0 0 160px; /* sejajarkan tanda ":" */
+  text-align: left;
+}
+.line .value {
+  flex: 1;
+}
+
+/* List pasal */
+.doc-ol {
+  margin-left: 25px;
+}
+.doc-ol li {
+  margin-bottom: 10px;
+}
+
+/* Kolom tanda tangan */
+.columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.col {
+  flex: 1;
+  text-align: center;
+}
