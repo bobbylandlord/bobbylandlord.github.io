@@ -95,13 +95,13 @@ button:hover {
 .doc-title {
   text-align: center;
   font-weight: bold;
-  font-size: 20px; /* judul */
+  font-size: 20px;
   margin-bottom: 5px;
 }
 
 .doc-subtitle {
   text-align: center;
-  font-size: 16px; /* nomor surat */
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
@@ -112,19 +112,22 @@ button:hover {
 /* Format baris rapi (label : value) */
 .line {
   display: flex;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
-
 .line .label {
-  flex: 0 0 200px; /* semua label sama lebar → ":" sejajar */
+  flex: 0 0 200px;  /* sejajarkan tanda ":" */
   text-align: left;
 }
-
 .line .value {
   flex: 1;
+}
+
+.ol div {
+  margin-bottom: 8px; /* jarak antar poin kesepakatan */
 }
 
 /* List pasal */
 .doc-ol {
   margin-left: 20px;
 }
+
