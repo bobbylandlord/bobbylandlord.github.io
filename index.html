@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kontrak Jual Beli Tanah Kavling</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- pdfmake -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <!-- html2pdf (mengambil HTML preview -> PDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>Kontrak Jual Beli Tanah Kavling</h1>
-    <p>Isi semua data (placeholder *001* – *027*) lalu hasilkan PDF.</p>
+    <h1>Microsite - Kontrak Jual Beli Tanah Kavling</h1>
+    <p>Isi data (001–027). Preview akan muncul di kanan. Klik "Generate PDF" untuk unduh A4.</p>
   </header>
 
   <main>
-    <!-- Form Input -->
-    <div class="form-container">
+    <section class="form-container">
       <h2>Form Input</h2>
       <form id="contractForm"></form>
-      <button id="generateBtn">Generate PDF</button>
-    </div>
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <button id="fillSample" type="button">Isi Contoh</button>
+        <button id="clearSample" type="button">Bersihkan</button>
+        <button id="generateBtn" type="button">Generate PDF</button>
+      </div>
+      <p style="font-size:12px; color:#666; margin-top:10px;">Catatan: setiap perubahan otomatis merender preview.</p>
+    </section>
 
-    <!-- Preview Dokumen -->
-    <div class="preview-container">
+    <section class="preview-container">
       <h2>Preview Dokumen</h2>
-      <div id="preview" class="doc-preview"></div>
-    </div>
+      <div id="previewWrapper">
+        <!-- preview akan di-render di sini -->
+        <div id="preview" class="doc-preview"></div>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
