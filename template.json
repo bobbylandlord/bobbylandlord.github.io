@@ -55,10 +55,10 @@
     { "text": "Demikian surat Pembelian ini dibuat oleh kedua belah pihak tanpa ada sesuatu paksaan, penekanan dari pihak manapun dan setelah dibaca serta dipahami maksud isinya, disepakati oleh kedua belah pihak, kemudian ditanda tangani di atas materai oleh kedua belah pihak dalam rangkap 2 (dua) yang bermaterai cukup, Rangkap Pertama untuk PIHAK PENJUAL dan Rangkap Kedua untuk PIHAK PEMBELI, yang keduanya mempunyai kekuatan hukum yang sama.", "margin": [0, 0, 0, 15] },
 
     { "text": "  " },
-    { "text": "Catatan / Keterangan Khusus ………………………………………………………………………. ", "margin": [0, 0, 0, 15] },
+    { "text": "Catatan / Keterangan Khusus ………………………………………………………………………. ", "margin": [10, 0, 0, 15] },
 
     { "text": "  " },
-    { "text": "Banjarbaru, *027*", "alignment": "right", "margin": [0, 20, 0, 20] },
+    { "text": "Banjarbaru, *027*", "alignment": "right", "margin": [10, 20, 0, 20] },
 
     { "text": "  " },
     { "text": "SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING INI DISETUJUI OLEH:", "alignment": "center", "margin": [0, 0, 0, 30] },
@@ -71,3 +71,4 @@
     }
   ]
 }
+
