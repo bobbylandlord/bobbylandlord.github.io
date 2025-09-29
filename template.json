@@ -1,68 +1,65 @@
 {
   "page1": [
-    "<div class='doc-title'>SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING</div>",
-    "<div class='doc-subtitle'>No. : *001*</div>",
+    { "text": "SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING", "style": "title", "alignment": "center" },
+    { "text": "No. : *001*", "alignment": "center", "margin": [0, 10, 0, 20] },
 
-    "<div class='doc-section'>Yang bertandatangan dibawah ini :</div>",
+    { "text": "Yang bertandatangan dibawah ini :" },
 
-    "<div class='line'><span class='label'>1. N.I.K.</span><span class='value'>*002*</span></div>",
-    "<div class='line'><span class='label'>Nama</span><span class='value'>*003*</span></div>",
-    "<div class='line'><span class='label'>Jabatan</span><span class='value'>*004*</span></div>",
-    "<div class='line'><span class='label'>Alamat</span><span class='value'>*005*</span></div>",
+    { "text": "1. N.I.K. : *002*" },
+    { "text": "   Nama : *003*" },
+    { "text": "   Jabatan : *004*" },
+    { "text": "   Alamat : *005*", "margin": [0, 0, 0, 10] },
+    { "text": "Dalam hal ini selaku *006* bertindak atas nama atau mewakili *007* disebut PENJUAL", "margin": [0, 0, 0, 15] },
 
-    "<div class='doc-section'>Dalam hal ini selaku *006* bertindak atas nama atau mewakili *007* disebut PIHAK PENJUAL</div>",
+    { "text": "2. N.I.K. : *008*" },
+    { "text": "   Nama : *009*" },
+    { "text": "   Tempat Tanggal Lahir : *010*" },
+    { "text": "   Alamat : *011*" },
+    { "text": "   Pekerjaan : *012*" },
+    { "text": "   No. Hp / Telephone : *013*", "margin": [0, 0, 0, 10] },
+    { "text": "Dalam hal ini bertindak atas nama diri sendiri dalam keadaan sehat jasmani dan rohani tanpa penekanan dari siapapun, selanjutnya disebut PIHAK PEMBELI.", "margin": [0, 0, 0, 15] },
 
-    "<div class='line'><span class='label'>2. N.I.K.</span><span class='value'>*008*</span></div>",
-    "<div class='line'><span class='label'>Nama</span><span class='value'>*009*</span></div>",
-    "<div class='line'><span class='label'>Tempat Tanggal Lahir</span><span class='value'>*010*</span></div>",
-    "<div class='line'><span class='label'>Alamat</span><span class='value'>*011*</span></div>",
-    "<div class='line'><span class='label'>Pekerjaan</span><span class='value'>*012*</span></div>",
-    "<div class='line'><span class='label'>No. Hp / Telephone</span><span class='value'>*013*</span></div>",
+    { "text": "PIHAK PEMBELI membeli *014* Kavling Tanah di lokasi *015* yang beralamat di *016*, dari PIHAK PENJUAL dengan surat induk *017* terlampir Nomor: *018* A/n *019* dengan perincian sebagai berikut:", "margin": [0, 0, 0, 15] },
 
-    "<div class='doc-section'>Dalam hal ini bertindak atas nama diri sendiri dalam keadaan sehat jasmani dan rohani tanpa penekanan dari siapapun, selanjutnya disebut PIHAK PEMBELI.</div>",
-
-    "<div class='doc-section'>PIHAK PEMBELI membeli *014* Kavling Tanah di lokasi *015* yang beralamat di *016*, dari PIHAK PENJUAL dengan surat induk *017* terlampir Nomor: *018* A/n *019* dengan perincian sebagai berikut:</div>",
-
-    "<div class='line'><span class='label'>Kavling No.</span><span class='value'>*020*</span></div>",
-    "<div class='line'><span class='label'>Ukuran Tanah/Kavling</span><span class='value'>*021*</span></div>",
-    "<div class='line'><span class='label'>Luas Area</span><span class='value'>*022* M²</span></div>",
-    "<div class='line'><span class='label'>Cara Pembayaran</span><span class='value'>*023*</span></div>",
-
-    "<div class='line'><span class='label'>Harga Total Tanah Kavling</span><span class='value'>Rp. *024*,-</span></div>",
-    "<div class='line'><span class='label'>Uang Muka</span><span class='value'>Rp. *025*,-</span></div>",
-    "<div class='line'><span class='label'>Sisa yang harus dibayar</span><span class='value'>Rp. *026*,-</span></div>",
-
-    "<div class='doc-section'>(Dilunasi setelah SHM terbit)</div>"
+    { "text": "Kavling No. : *020*" },
+    { "text": "Ukuran Tanah/Kavling : *021*" },
+    { "text": "Luas Area : *022* M²" },
+    { "text": "Cara Pembayaran : *023*" },
+    { "text": "Harga Total Tanah Kavling : Rp. *024*,-" },
+    { "text": "Uang Muka : Rp. *025*,-" },
+    { "text": "Sisa yang harus dibayar : Rp. *026*,-" },
+    { "text": "(Dilunasi setelah SHM terbit)", "italics": true, "margin": [0, 0, 0, 10] }
   ],
 
   "page2": [
-    "<div class='doc-section'>Dengan ini KEDUA BELAH PIHAK bersepakat bahwa:</div>",
-    {
-      "ol": [
-        "Harga total kavlingan ini termasuk biaya-biaya Pajak Bumi dan Bangunan sebelum SHM atas nama PEMBELI terbit, dan pengurusan SHM atas nama PEMBELI, termasuk biaya Pemeliharaan setelah Penyerahan SHM, biaya administrasi penyerahan SHM, dan biaya-biaya lain yang timbul dikemudian hari akibat peraturan baru pemerintah di bidang perpajakan.",
-        "PIHAK PENJUAL menjamin kepada PIHAK PEMBELI surat alas dari tanah yang dibeli tidak akan terjadi tumpang tindih atau tanah yang dimaksud tidak mengalami penggandaan surat tanah, namun apabila hal itu terjadi maka PIHAK PENJUAL mengganti/membayar secara bertahap seluruh uang yang telah dibayar PIHAK PEMBELI dalam jangka waktu enam hingga dua belas bulan.",
-        "Setiap pembayaran yang dilakukan oleh PEMBELI, PIHAK PENJUAL akan menerbitkan kwitansi pembayaran sebagai bukti pembayaran yang sah bahwa PEMBELI telah melakukan pembayaran, kwitansi pembayaran itu merupakan alat bukti yang sah yang keberadaannya tidak dapat dipisahkan dari Surat Pembelian ini.",
-        "Apabila PIHAK PEMBELI mengajukan pembatalan pembelian ini secara sepihak atau terjadi keterlambatan dalam pembayaran oleh PIHAK PEMBELI tanpa konfirmasi kepada PIHAK PENJUAL, maka PIHAK PEMBELI tidak berhak lagi atas tanah tersebut dan separuh atau 50% daripada yang telah dibayar PIHAK PEMBELI secara sepenuhnya menjadi milik PIHAK PENJUAL sedangkan 50% dari yang telah dibayar oleh PIHAK PEMBELI akan dikembalikan oleh PIHAK PENJUAL kepada PIHAK PEMBELI, secara bertahap.",
-        "PIHAK PEMBELI tidak akan menjual, menggadaikan, atau melakukan perbuatan-perbuatan lain yang bertujuan untuk memindahtangankan TANAH KAVLING tersebut kepada PIHAK LAIN tanpa pemberitahuan atau persetujuan tertulis dari PIHAK PENJUAL, sebelum surat pemecahan alas tanah tersebut diterbitkan oleh instansi atau lembaga yang berwenang.",
-        "Surat Pembelian ini adalah surat yang menjadi pegangan kedua belah pihak dan sah di mata hukum sesuai Kitab Undang-Undang Hukum Perdata Pasal 1320, sebelum surat pemecahan alas tanah tersebut diterbitkan oleh instansi atau lembaga yang berwenang dan diterima oleh PEMBELI.",
-        "Apabila di antara kedua belah pihak meninggal dunia maka ahli waris yang sah berdasarkan surat nikah atau kartu keluarga, atau bukti-bukti yang sah lainnya sebagai ahli waris yang dikeluarkan oleh instansi/Badan Peradilan yang berwenang, ditetapkan sebagai ahli waris untuk melanjutkan ketentuan-ketentuan dalam surat pembelian ini.",
-        "Apabila ada permasalahan menyangkut jual beli tanah kavling ini termasuk apabila ada keterlambatan dalam kepengurusan surat-surat alas tanah maka akan didiskusikan lebih lanjut secara kekeluargaan antara PIHAK PENJUAL dengan PIHAK PEMBELI dalam bentuk MUSYAWARAH untuk MUFAKAT tanpa melibatkan PIHAK KETIGA."
-      ]
-    }
+    { "text": "Dengan ini KEDUA BELAH PIHAK bersepakat bahwa:", "margin": [0, 0, 0, 15] },
+
+    { "ol": [
+      "Harga total kavlingan ini termasuk biaya-biaya Pajak Bumi dan Bangunan sebelum SHM atas nama PEMBELI terbit...",
+      "PIHAK PENJUAL menjamin kepada PIHAK PEMBELI surat alas dari tanah yang dibeli tidak akan terjadi tumpang tindih...",
+      "Setiap pembayaran yang dilakukan oleh PEMBELI, PIHAK PENJUAL akan menerbitkan kwitansi pembayaran...",
+      "Apabila PIHAK PEMBELI mengajukan pembatalan pembelian ini secara sepihak...",
+      "PIHAK PEMBELI tidak akan menjual, menggadaikan, atau melakukan perbuatan-perbuatan lain...",
+      "Surat Pembelian ini adalah surat yang menjadi pegangan kedua belah pihak...",
+      "Apabila di antara kedua belah pihak meninggal dunia maka ahli waris yang sah...",
+      "Apabila ada permasalahan menyangkut jual beli tanah kavling ini..."
+    ]}
   ],
 
   "page3": [
-    "<div class='doc-section'>Demikian surat Pembelian ini dibuat oleh kedua belah pihak tanpa ada sesuatu paksaan, penekanan dari pihak manapun dan setelah dibaca serta dipahami maksud isinya, disepakati oleh kedua belah pihak, kemudian ditanda tangani di atas materai oleh kedua belah pihak dalam rangkap 2 (dua) yang bermaterai cukup, Rangkap Pertama untuk PIHAK PENJUAL dan Rangkap Kedua untuk PIHAK PEMBELI, yang keduanya mempunyai kekuatan hukum yang sama.</div>",
+    { "text": "Demikian surat Pembelian ini dibuat oleh kedua belah pihak tanpa ada sesuatu paksaan...", "margin": [0, 0, 0, 15] },
 
-    "<div class='doc-section'>Catatan / Keterangan Khusus ………………………………………………………………………. </div>",
+    { "text": "Catatan / Keterangan Khusus ………………………………………………………………………. ", "margin": [0, 0, 0, 15] },
 
-    "<div class='doc-section' style='text-align:right'>Banjarbaru, *027*</div>",
+    { "text": "Banjarbaru, *027*", "alignment": "right", "margin": [0, 20, 0, 20] },
 
-    "<div class='doc-section' style='text-align:center'>SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING INI DISETUJUI OLEH:</div>",
+    { "text": "SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING INI DISETUJUI OLEH:", "alignment": "center", "margin": [0, 0, 0, 30] },
 
-    "<div class='doc-section' style='display:flex; justify-content:space-between; margin-top:40px;'>\
-      <div style='text-align:center; width:45%'>PEMBELI<br><br><br><br>(*009*)</div>\
-      <div style='text-align:center; width:45%'>PENJUAL<br><br><br><br>(*003*)<br>*007*</div>\
-    </div>"
+    {
+      "columns": [
+        { "text": "PEMBELI\n\n\n\n(*009*)", "alignment": "center" },
+        { "text": "PENJUAL\n\n\n\n(*003*)\n*007*", "alignment": "center" }
+      ]
+    }
   ]
 }
