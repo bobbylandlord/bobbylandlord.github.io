@@ -217,11 +217,11 @@ function fillSample() {
     "*005*": "JL. SWADAYA RT. 001 RW. 004\nKEL. LOKTABAT SELATAN\nKEC. BANJARBARU SELATAN",
     "*006*": "Direktur",
     "*007*": "PT. BERKAH JAYA BERSAUDARA",
-    "*008*": "6371051904860008",
+    "*008*": "6372000000000001",
     "*009*": "RICHARD RICHARD",
     "*010*": "BUMI, 00-00-1900",
-    "*011*": "JL. PETUALANG NO. 00 RT.000 RW.000\nKEL. LOKTABAT KEC. LOKTABAT",
-    "*012*": "PETUALANG",
+    "*011*": "JL. PETUALANG NO. 00 RT.000 RW.000\nKEL.LOKTABAT KEC.LOKTABAT",
+    "*012*": "SI BOLANG",
     "*013*": "08123456789",
     "*014*": "6 (enam)",
     "*015*": "BERKAH JAYA BERSAUDARA KAVLING LAND 38",
@@ -251,4 +251,5 @@ function clearForm() {
   document.querySelectorAll("#contractForm input").forEach(i => (i.value = ""));
   updatePreview();
 }
+
 
