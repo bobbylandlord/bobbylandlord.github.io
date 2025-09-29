@@ -201,6 +201,15 @@ function generatePDF() {
   btn.disabled = true;
   btn.textContent = "Membuat PDF...";
 
+const opt = {
+  margin:       [0,0,0,0],   // biar margin dari CSS
+  filename:     'Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf',
+  image:        { type: 'jpeg', quality: 0.98 },
+  html2canvas:  { scale: 2, useCORS: true },
+  jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+};
+
+  
   // create pdf
   html2pdf().set(opt).from(preview).toPdf().get('pdf').then(function(pdf) {
     // success (no-op)
