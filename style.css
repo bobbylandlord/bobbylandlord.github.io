@@ -77,8 +77,8 @@ button:hover { background:#003f7d; }
 .doc-preview {
   width: 210mm;          
   min-height: 297mm;     
-  padding: 40mm 30mm 30mm 20mm; 
-  /* atas 40mm, kanan 30mm, bawah 30mm, kiri 0mm */
+  padding: 40mm 30mm 30mm 10mm; 
+  /* atas 40mm, kanan 30mm, bawah 30mm, kiri 10mm */
   margin: 0 auto;
   background: white;
   border: 1px solid #ddd;
@@ -130,6 +130,7 @@ button:hover { background:#003f7d; }
   .form-container { width: 100%; }
   .doc-preview { width: calc(100% - 40px); padding: 20px; min-height: auto; }
 }
+
 
 
 
