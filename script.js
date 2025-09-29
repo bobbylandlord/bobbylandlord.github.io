@@ -1,5 +1,36 @@
 let templateData = null;
 
+// Mapping placeholder ke label deskriptif
+const labelsMap = {
+  "*001*": "Nomor Surat Perjanjian",
+  "*002*": "NIK Penjual",
+  "*003*": "Nama Penjual",
+  "*004*": "Jabatan Penjual",
+  "*005*": "Alamat Penjual",
+  "*006*": "Status Penjual (misalnya: Direktur)",
+  "*007*": "Nama Perusahaan Penjual",
+  "*008*": "NIK Pembeli",
+  "*009*": "Nama Pembeli",
+  "*010*": "Tempat & Tanggal Lahir Pembeli",
+  "*011*": "Alamat Pembeli",
+  "*012*": "Pekerjaan Pembeli",
+  "*013*": "Nomor HP Pembeli",
+  "*014*": "Jumlah Kavling Dibeli",
+  "*015*": "Nama Lokasi Kavling",
+  "*016*": "Alamat Lokasi Kavling",
+  "*017*": "Nama Surat Induk",
+  "*018*": "Nomor Surat Induk",
+  "*019*": "Atas Nama Surat Induk",
+  "*020*": "Nomor Kavling",
+  "*021*": "Ukuran Tanah per Kavling",
+  "*022*": "Luas Area Total",
+  "*023*": "Cara Pembayaran",
+  "*024*": "Harga Total",
+  "*025*": "Uang Muka",
+  "*026*": "Sisa Bayar",
+  "*027*": "Tanggal & Tempat Penandatanganan"
+};
+
 // Load template.json
 fetch("template.json")
   .then(res => res.json())
@@ -17,7 +48,7 @@ function buildForm() {
     wrapper.classList.add("form-group");
 
     const label = document.createElement("label");
-    label.textContent = code;
+    label.textContent = labelsMap[code] || code; // tampilkan label deskriptif
 
     const input = document.createElement("input");
     input.type = "text";
