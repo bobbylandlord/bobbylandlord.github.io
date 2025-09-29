@@ -122,3 +122,46 @@ button:hover {
   margin-left: 20px;
 }
 
+.doc-preview {
+  font-family: "Lucida Console", Monaco, monospace;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 40px;
+  width: 794px;       /* lebar A4 */
+  min-height: 1123px; /* tinggi A4 */
+  margin: auto;
+}
+
+.doc-page {
+  page-break-after: always;
+  margin-bottom: 40px;
+}
+
+.doc-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14pt;
+  margin-bottom: 5px;
+}
+
+.doc-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+.doc-table td {
+  border: 1px solid #444;
+  padding: 5px 8px;
+  font-size: 11pt;
+}
+
+.doc-ol {
+  margin-left: 20px;
+}
+
