@@ -75,18 +75,17 @@ button:hover { background:#003f7d; }
 
 /* Actual document preview (A4) */
 .doc-preview {
-  width: 210mm;           /* A4 width */
-  min-height: 297mm;      /* A4 height */
-  padding: 18mm;          /* print-like padding */
+  width: 210mm;           /* Lebar A4 */
+  min-height: 297mm;      /* Tinggi A4 */
+  padding: 40mm 25mm 25mm 25mm; /* atas 40mm utk kop, kiri 25mm, kanan 25mm, bawah 25mm */
   margin: 0 auto;
   background: white;
   border: 1px solid #ddd;
-  font-size: 13px;        /* isi kontrak sesuai permintaan */
+  font-size: 13px;
   line-height: 1.45;
   color: #111;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
   box-sizing: border-box;
-  white-space: pre-wrap;  /* supaya newline dipertahankan */
+  white-space: pre-wrap;
 }
 
 /* Page break handling for print/pdf */
@@ -130,4 +129,5 @@ button:hover { background:#003f7d; }
   .form-container { width: 100%; }
   .doc-preview { width: calc(100% - 40px); padding: 20px; min-height: auto; }
 }
+
 
