@@ -114,7 +114,7 @@ button:hover { background:#003f7d; }
 .line .value { flex: 1; }
 
 /* Pasal/ol style */
-.doc-ol { margin-left: 18px; margin-top:6px; }
+.doc-ol { margin-left: 12px; margin-top:7px; }
 .doc-ol li { margin-bottom: 10px; text-align:justify; }
 
 /* Columns (signature) */
@@ -130,9 +130,3 @@ button:hover { background:#003f7d; }
   .form-container { width: 100%; }
   .doc-preview { width: calc(100% - 40px); padding: 20px; min-height: auto; }
 }
-
-
-
-
-
-
