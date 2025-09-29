@@ -4,25 +4,27 @@
   <meta charset="UTF-8">
   <title>Microsite Kontrak Jual Beli Tanah Kavling</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- pdfmake -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 </head>
 <body>
   <header>
     <h1>Kontrak Jual Beli Tanah Kavling</h1>
-    <p>Silakan isi 28 data berikut, lalu generate kontrak dalam format PDF (A4).</p>
+    <p>Isi semua data (placeholder *001* – *027*) lalu hasilkan PDF.</p>
   </header>
 
   <main>
     <section class="form-container">
-      <form id="contractForm">
-        <!-- Input otomatis dari 28 placeholder -->
-      </form>
+      <h2>Form Input</h2>
+      <form id="contractForm"></form>
       <button id="generateBtn">Generate PDF</button>
     </section>
 
     <section class="preview-container">
-      <h2>Preview Dokumen</h2>
-      <div id="preview"></div>
+      <h2>Preview (JSON)</h2>
+      <pre id="preview"></pre>
     </section>
   </main>
 
