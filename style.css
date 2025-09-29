@@ -116,7 +116,7 @@ button:hover {
 }
 
 .line .label {
-  flex: 0 0 160px; /* semua label sama lebar → ":" sejajar */
+  flex: 0 0 200px; /* lebar sama untuk semua label */
   text-align: left;
 }
 
@@ -124,7 +124,9 @@ button:hover {
   flex: 1;
 }
 
+
 /* List pasal */
 .doc-ol {
   margin-left: 20px;
 }
+
