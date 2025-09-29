@@ -1,18 +1,14 @@
-// Pastikan pdfmake sudah dimuat di index.html:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-
 let templateData = null;
 
-// Ambil template JSON
+// Load template.json
 fetch("template.json")
   .then(res => res.json())
   .then(data => {
     templateData = data;
-    buildForm(); // buat form input 27 field
+    buildForm();
   });
 
-// Buat form input otomatis
+// Generate 27 input fields
 function buildForm() {
   const form = document.getElementById("contractForm");
   for (let i = 1; i <= 27; i++) {
@@ -22,6 +18,7 @@ function buildForm() {
 
     const label = document.createElement("label");
     label.textContent = code;
+
     const input = document.createElement("input");
     input.type = "text";
     input.name = code;
@@ -34,7 +31,7 @@ function buildForm() {
   }
 }
 
-// Ganti placeholder dengan input user
+// Replace placeholders
 function replacePlaceholders(textObj, inputs) {
   if (typeof textObj === "string") {
     let result = textObj;
@@ -59,7 +56,7 @@ function replacePlaceholders(textObj, inputs) {
   return textObj;
 }
 
-// Update preview (sekadar teks JSON ter-render)
+// Update preview JSON
 function updatePreview() {
   const inputs = [...document.querySelectorAll("input")].map(inp => ({
     code: inp.dataset.code,
