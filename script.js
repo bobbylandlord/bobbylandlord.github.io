@@ -102,20 +102,20 @@ function updatePreview() {
     <div class="doc-page">
       <div class="doc-title">SURAT PERJANJIAN PENGIKATAN JUAL BELI TANAH KAVLING</div>
       <div class="doc-subtitle">No. : ${inputs.find(i => i.code === "*001*").value}</div>
-      <div class="doc-section">${renderContent(page1)}</div>
+      ${renderContent(page1)}
     </div>
 
     <div class="doc-page">
-      <div class="doc-section">${renderContent(page2)}</div>
+      ${renderContent(page2)}
     </div>
 
     <div class="doc-page">
-      <div class="doc-section">${renderContent(page3)}</div>
+      ${renderContent(page3)}
     </div>
   `;
 }
 
-// Render konten (string/array/objek) jadi HTML
+// Render konten (string/array/object) ke HTML
 function renderContent(content) {
   if (typeof content === "string") {
     return `<p>${content}</p>`;
@@ -143,7 +143,6 @@ function renderTable(table) {
   ).join("");
   return `<table class="doc-table">${rows}</table>`;
 }
-
 
 // Generate PDF
 document.getElementById("generateBtn").addEventListener("click", () => {
@@ -183,4 +182,5 @@ document.getElementById("generateBtn").addEventListener("click", () => {
 
   pdfMake.createPdf(docDefinition).download("Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf");
 });
+
 
