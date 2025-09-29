@@ -218,10 +218,10 @@ function fillSample() {
     "*006*": "Direktur",
     "*007*": "PT. BERKAH JAYA BERSAUDARA",
     "*008*": "6371051904860008",
-    "*009*": "YOSVAN SYAIPUL",
-    "*010*": "BANJARMASIN, 19-04-1986",
-    "*011*": "JL. DAHLIA I NO. 06 RT.010 RW.002\nKEL. MAWAR KEC. BANJARMASIN TENGAH",
-    "*012*": "WIRASWASTA",
+    "*009*": "RICHARD RICHARD",
+    "*010*": "BUMI, 00-00-1900",
+    "*011*": "JL. PETUALANG NO. 00 RT.000 RW.000\nKEL. LOKTABAT KEC. LOKTABAT",
+    "*012*": "PETUALANG",
     "*013*": "08123456789",
     "*014*": "6 (enam)",
     "*015*": "BERKAH JAYA BERSAUDARA KAVLING LAND 38",
@@ -251,3 +251,4 @@ function clearForm() {
   document.querySelectorAll("#contractForm input").forEach(i => (i.value = ""));
   updatePreview();
 }
+
