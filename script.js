@@ -118,30 +118,32 @@ function updatePreview() {
 // Render konten (string/array/object) ke HTML
 function renderContent(content) {
   if (typeof content === "string") {
-    return `<p>${content}</p>`;
+    // biar teks panjang tetap mengikuti baris seperti dokumen
+    return `<div class="line">${content}</div>`;
   }
   if (Array.isArray(content)) {
-    return content.map(item => renderContent(item)).join("");
+    return content.map(item => renderContent(item)).join("\n");
   }
   if (typeof content === "object" && content !== null) {
     if (content.table) {
-      return renderTable(content.table);
+      return renderDocTable(content.table);
     }
     if (content.ol) {
-      return `<ol class="doc-ol">${content.ol.map(li => `<li>${li}</li>`).join("")}</ol>`;
+      return `<div class="ol">${content.ol.map((li, i) => 
+        `<div>${i + 1}. ${li}</div>`
+      ).join("")}</div>`;
     }
     if (content.text) {
-      return `<p>${content.text}</p>`;
+      return `<div class="line">${content.text}</div>`;
     }
   }
   return "";
 }
 
-function renderTable(table) {
-  let rows = table.body.map(
-    row => `<tr>${row.map(cell => `<td>${cell}</td>`).join("")}</tr>`
+function renderDocTable(table) {
+  return table.body.map(row =>
+    row.map(cell => `<div class="line">${cell}</div>`).join("")
   ).join("");
-  return `<table class="doc-table">${rows}</table>`;
 }
 
 // Generate PDF
@@ -182,5 +184,6 @@ document.getElementById("generateBtn").addEventListener("click", () => {
 
   pdfMake.createPdf(docDefinition).download("Surat_Perjanjian_Jual_Beli_Tanah_Kavling.pdf");
 });
+
 
 
