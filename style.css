@@ -24,6 +24,7 @@ main {
   border-radius: 10px;
   flex: 1;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow-x: auto;
 }
 
 form {
@@ -79,12 +80,10 @@ button:hover {
   background: white;
   border: 1px solid #ccc;
   padding: 40px;
-  max-width: 794px;   /* sesuai ukuran A4 */
+  max-width: 794px;   /* A4 */
   margin: auto;
   font-size: 12px;
   line-height: 1.4;
-  white-space: normal;
-  overflow-x: auto;
 }
 
 .doc-page {
@@ -109,14 +108,14 @@ button:hover {
   margin: 15px 0;
 }
 
-/* Format baris rapi (label : value) */
+/* format label : value */
 .line {
   display: flex;
   margin-bottom: 2px;
 }
 
 .line .label {
-  flex: 0 0 200px; /* lebar sama untuk semua label */
+  flex: 0 0 200px; /* semua label sejajar */
   text-align: left;
 }
 
@@ -124,9 +123,7 @@ button:hover {
   flex: 1;
 }
 
-
-/* List pasal */
+/* list pasal */
 .doc-ol {
   margin-left: 20px;
 }
-
