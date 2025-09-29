@@ -110,7 +110,7 @@ button:hover { background:#003f7d; }
 
 /* label:value rows — untuk membuat ":" selalu sejajar */
 .line { display: flex; margin-bottom: 6px; align-items:flex-start; }
-.line .label { flex: 0 0 70mm; /* lebar tetap menjamin ":" sejajar */ font-weight: normal; }
+.line .label { flex: 0 0 50mm; /* lebar tetap menjamin ":" sejajar */ font-weight: normal; }
 .line .value { flex: 1; }
 
 /* Pasal/ol style */
@@ -130,3 +130,4 @@ button:hover { background:#003f7d; }
   .form-container { width: 100%; }
   .doc-preview { width: calc(100% - 40px); padding: 20px; min-height: auto; }
 }
+
