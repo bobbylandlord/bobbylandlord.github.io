@@ -81,7 +81,7 @@ button:hover {
   padding: 40px;
   max-width: 794px;   /* sesuai ukuran A4 */
   margin: auto;
-  font-size: 12px;
+  font-size: 13px;    /* isi kontrak */
   line-height: 1.4;
   white-space: normal;
   overflow-x: auto;
@@ -95,14 +95,18 @@ button:hover {
 .doc-title {
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 20px; /* judul */
   margin-bottom: 5px;
 }
 
 .doc-subtitle {
   text-align: center;
-  font-size: 16px;
+  font-size: 16px; /* nomor surat */
   margin-bottom: 20px;
+}
+
+.doc-section {
+  margin: 15px 0;
 }
 
 /* Format baris rapi (label : value) */
@@ -118,4 +122,9 @@ button:hover {
 
 .line .value {
   flex: 1;
+}
+
+/* List pasal */
+.doc-ol {
+  margin-left: 20px;
 }
